@@ -38,7 +38,7 @@ if(!method_exists($admin, 'register_backend_modfiles') && file_exists(WB_PATH ."
 require_once(WB_PATH.'/framework/functions.php');
 
 // Get settings
-$query_settings = $database->query("SELECT `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `subdirs`, `title`, `picdir`, `bg`, `maxwidth`, `showoriginal`, `textlink`,  `titletext`, `inline` FROM `".TABLE_PREFIX."mod_imagegallery_settings` WHERE `section_id` = '$section_id'");
+$query_settings = $database->query("SELECT `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `show_extensions`, `subdirs`, `title`, `picdir`, `bg`, `maxwidth`, `showoriginal`, `textlink`,  `titletext`, `inline` FROM `".TABLE_PREFIX."mod_imagegallery_settings` WHERE `section_id` = '$section_id'");
 $settings = $query_settings->fetchRow();
 
 ?>
@@ -116,10 +116,13 @@ if(function_exists('edit_module_css')) {
 	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['INLINE']; ?>:<br /></div>
 	<div class="gallery_setting_value"><?php if ($settings['inline'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="inline" <?php echo $checked; ?> /><br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_FILE_NAMES']; ?>:<br /></div>
-	<div class="gallery_setting_value"><?php if ($settings['filenames'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="filenames" <?php echo $checked; ?> /><br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_FILE_NAMES']; ?>:<br /></div>
+        <div class="gallery_setting_value"><?php if ($settings['filenames'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="filenames" <?php echo $checked; ?> /><br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_ORIGINAL']; ?>:<br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS']; ?>:<br /></div>
+        <div class="gallery_setting_value"><?php if ($settings['show_extensions'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="show_extensions" <?php echo $checked; ?> /><br /></div>
+
+        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_ORIGINAL']; ?>:<br /></div>
 	<div class="gallery_setting_value"><?php if ($settings['showoriginal'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="showoriginal" <?php echo $checked; ?> /><br /></div>
 
 	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_TEXTLINK']; ?>:<br /></div>

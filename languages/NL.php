@@ -37,6 +37,7 @@ $MOD_AIG_NOEXT['THUMBS_BACKGROUND'] = 'Thumbnails achtergrondkleur';
 $MOD_AIG_NOEXT['THUMBSIZE'] = 'Thumbnail grootte';
 $MOD_AIG_NOEXT['MAXWIDTH']	= 'Maximale breedte foto';
 $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Bestandsnaam zichtbaar';
+$MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Bestandsextensies zichtbaar';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Originele foto zichtbaar (nieuw scherm)';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Volgende/vorige als tekst ipv plaatje';
 $MOD_AIG_NOEXT['INLINE'] = 'Show gallery inline';

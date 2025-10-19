@@ -36,6 +36,7 @@ $MOD_AIG_NOEXT['THUMBS_BACKGROUND'] = 'Thumbs Background';
 $MOD_AIG_NOEXT['THUMBSIZE'] = 'Thumbsize';
 $MOD_AIG_NOEXT['MAXWIDTH']	= 'Maximum Width';
 $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Show Filenames';
+$MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Show file extensions';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Show Original';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Text next/previous links';
 $MOD_AIG_NOEXT['INLINE'] = 'Show gallery inline';

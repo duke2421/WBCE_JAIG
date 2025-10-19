@@ -40,6 +40,11 @@ if (isset($_POST['filenames'])) {
 } else {
     $filenames = '0';
 }
+if (isset($_POST['show_extensions'])) {
+    $show_extensions = $_POST['show_extensions'];
+} else {
+    $show_extensions = '0';
+}
 if (isset($_POST['subdirs'])) {
     $subdirs = $_POST['subdirs'];
 } else {
@@ -92,6 +97,7 @@ $query = "UPDATE `".TABLE_PREFIX."mod_imagegallery_settings` "
 		. "	`thumbdir` = '$thumbdir',"
 		. "	`thumbsize` = '$thumbsize',"
 		. "	`filenames` = '$filenames',"
+		. "	`show_extensions` = '$show_extensions',"
 		. "	`subdirs` = '$subdirs',"
 		. "	`title` = '$title',"
 		. "	`picdir` = '$picdir',"

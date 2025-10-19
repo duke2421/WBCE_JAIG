@@ -5,7 +5,7 @@
  * Way Better Content Editing.
  * Visit https://wbce.org to learn more and to join the community.
  * @category        modules
- * @package         another_image_gallery_noext
+ * @package         WBCE_JAIG
  * @author          Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner, Bernd, tomno399
  * @copyright       2004-2009, Ryan Djurovich
  * @copyright       2009-2010, Website Baker Org. e.V.
@@ -57,8 +57,8 @@
  *
 */
 
-$module_directory = 'another_image_gallery_noext';
-$module_name = 'Another Image Gallery (No-Ext)';
+$module_directory = 'WBCE_JAIG';
+$module_name = 'WBCE_JAIG';
 $module_function = 'page';
 $module_version = '2.4.4';
 $module_platform = '2.8.x';

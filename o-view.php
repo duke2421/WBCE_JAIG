@@ -2,7 +2,7 @@
 /**
  *
  * @category        modules
- * @package         another_image_gallery_noext
+ * @package         WBCE_JAIG
  * @author          Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner
  * @copyright       2004-2009, Ryan Djurovich
  * @copyright       2009-2010, Website Baker Org. e.V.
@@ -19,18 +19,18 @@ if(defined('WB_PATH') == false) {
 }
 
 // check if module language file exists for the language set by the user (e.g. DE, EN)
-if(!file_exists(WB_PATH .'/modules/another_image_gallery_noext/languages/'.LANGUAGE .'.php')) {
+if(!file_exists(WB_PATH .'/modules/WBCE_JAIG/languages/'.LANGUAGE .'.php')) {
 	// no module language file exists for the language set by the user, include default module language file EN.php
-	require_once(WB_PATH .'/modules/another_image_gallery_noext/languages/EN.php');
+	require_once(WB_PATH .'/modules/WBCE_JAIG/languages/EN.php');
 } else {
 	// a module language file exists for the language defined by the user, load it
-	require_once(WB_PATH .'/modules/another_image_gallery_noext/languages/'.LANGUAGE .'.php');
+	require_once(WB_PATH .'/modules/WBCE_JAIG/languages/'.LANGUAGE .'.php');
 }
 
 // check if frontend.css file needs to be included into the <body></body> of view.php
-if((!function_exists('register_frontend_modfiles') || !defined('MOD_FRONTEND_CSS_REGISTERED')) &&  file_exists(WB_PATH .'/modules/another_image_gallery_noext/frontend.css')) {
+if((!function_exists('register_frontend_modfiles') || !defined('MOD_FRONTEND_CSS_REGISTERED')) &&  file_exists(WB_PATH .'/modules/WBCE_JAIG/frontend.css')) {
    echo '<style type="text/css">';
-   include(WB_PATH .'/modules/another_image_gallery_noext/frontend.css');
+   include(WB_PATH .'/modules/WBCE_JAIG/frontend.css');
    echo "\n</style>\n";
 } 
 
@@ -56,7 +56,7 @@ $inline = $settings['inline'];
 $bg = $settings['bg'];
 $thumbnails_clickable = isset($settings['thumbnails_clickable']) ? (int)$settings['thumbnails_clickable'] : 1;
 
-$words = $MOD_AIG_NOEXT['words'];
+$words = $MOD_WBCE_JAIG['words'];
 
 if (function_exists('ini_set')) {
 	@ini_set('memory_limit', -1);
@@ -89,7 +89,7 @@ if(!function_exists('error')){
 }
 
 echo "\n".'<!-- start image gallery -->'."\n";
-echo '<div class="another_image_gallery_noext">'."\n"; 
+echo '<div class="WBCE_JAIG">'."\n"; 
 $delim = DIRECTORY_SEPARATOR;
 if (array_key_exists('dir'.$section_id, $_GET) && $subdirs) {
 	$dir = str_replace('../', '', $_GET['dir'.$section_id]);
@@ -189,9 +189,9 @@ if ($included && $inline && array_key_exists('pic'.$section_id, $_GET)) {
 	if ($showarrows == 'yes'){
 		if ($pic > 0) {
 			if ($textlink==1){
-				echo '<a href="'.html($url).'pic'.$section_id.'='.($pic-1).html($urlsuffix).'">['.$MOD_AIG_NOEXT['PREVIOUS'].']</a>';	
+				echo '<a href="'.html($url).'pic'.$section_id.'='.($pic-1).html($urlsuffix).'">['.$MOD_WBCE_JAIG['PREVIOUS'].']</a>';	
 			} else {
-				echo '<a href="'.html($url).'pic'.$section_id.'='.($pic-1).html($urlsuffix).'" title="'.$MOD_AIG_NOEXT['PREVIOUS'].'"><img src="'.WB_URL.'/modules/another_image_gallery_noext/images/left_16.png" border="0" alt="'.$MOD_AIG_NOEXT['PREVIOUS'].'" /></a>';
+				echo '<a href="'.html($url).'pic'.$section_id.'='.($pic-1).html($urlsuffix).'" title="'.$MOD_WBCE_JAIG['PREVIOUS'].'"><img src="'.WB_URL.'/modules/WBCE_JAIG/images/left_16.png" border="0" alt="'.$MOD_WBCE_JAIG['PREVIOUS'].'" /></a>';
 			}
 		}
 	}
@@ -214,15 +214,15 @@ if ($included && $inline && array_key_exists('pic'.$section_id, $_GET)) {
 	}
 	if ($showarrows == 'yes'){
 		if ($textlink == 1) {
-			echo '<a href="'.html($u).'">['.$MOD_AIG_NOEXT['OVERVIEW'].']</a>';
+			echo '<a href="'.html($u).'">['.$MOD_WBCE_JAIG['OVERVIEW'].']</a>';
 		} else {
-			echo '<a href="'.html($u).'" title="'.$MOD_AIG_NOEXT['OVERVIEW'].'"><img src="'.WB_URL.'/modules/another_image_gallery_noext/images/up_16.png" border="0" alt="'.$MOD_AIG_NOEXT['OVERVIEW'].'" /></a>';
+			echo '<a href="'.html($u).'" title="'.$MOD_WBCE_JAIG['OVERVIEW'].'"><img src="'.WB_URL.'/modules/WBCE_JAIG/images/up_16.png" border="0" alt="'.$MOD_WBCE_JAIG['OVERVIEW'].'" /></a>';
 		}
 		if ($pic + 1 < sizeof($pics)){
 			if ($textlink == 1){
-					echo '<a href="'.html($url).'pic'.$section_id.'='.($pic + 1).html($urlsuffix).'">['.$MOD_AIG_NOEXT['NEXT'].']</a>';
+					echo '<a href="'.html($url).'pic'.$section_id.'='.($pic + 1).html($urlsuffix).'">['.$MOD_WBCE_JAIG['NEXT'].']</a>';
 			} else {
-					echo '<a href="'.html($url).'pic'.$section_id.'='.($pic + 1).html($urlsuffix).'" title="'.$MOD_AIG_NOEXT['NEXT'].'"><img src="'.WB_URL.'/modules/another_image_gallery_noext/images/right_16.png" border="0" alt="'.$MOD_AIG_NOEXT['NEXT'].'" /></a>';
+					echo '<a href="'.html($url).'pic'.$section_id.'='.($pic + 1).html($urlsuffix).'" title="'.$MOD_WBCE_JAIG['NEXT'].'"><img src="'.WB_URL.'/modules/WBCE_JAIG/images/right_16.png" border="0" alt="'.$MOD_WBCE_JAIG['NEXT'].'" /></a>';
 			}
 		}
 	}

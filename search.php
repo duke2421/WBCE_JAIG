@@ -2,7 +2,7 @@
 /**
  *
  * @category        modules
- * @package         another_image_gallery_noext
+ * @package         WBCE_JAIG
  * @author          Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner
  * @copyright       2004-2009, Ryan Djurovich
  * @copyright       2009-2010, Website Baker Org. e.V.

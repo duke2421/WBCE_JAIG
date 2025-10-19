@@ -2,7 +2,7 @@
 /**
  *
  * @category        modules
- * @package         another_image_gallery_noext
+ * @package         WBCE_JAIG
  * @author          Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner
  * @copyright       2004-2009, Ryan Djurovich
  * @copyright       2009-2010, Website Baker Org. e.V.
@@ -20,18 +20,18 @@ if(!defined('WB_PATH')) die(header('Location: index.php'));
 @include_once(WB_PATH .'/framework/module.functions.php');
 
 // check if module language file exists for the language set by the user (e.g. DE, EN)
-if(!file_exists(WB_PATH .'/modules/another_image_gallery_noext/languages/'.LANGUAGE .'.php')) {
+if(!file_exists(WB_PATH .'/modules/WBCE_JAIG/languages/'.LANGUAGE .'.php')) {
 	// no module language file exists for the language set by the user, include default module language file EN.php
-	require_once(WB_PATH .'/modules/another_image_gallery_noext/languages/EN.php');
+	require_once(WB_PATH .'/modules/WBCE_JAIG/languages/EN.php');
 } else {
 	// a module language file exists for the language defined by the user, load it
-	require_once(WB_PATH .'/modules/another_image_gallery_noext/languages/'.LANGUAGE .'.php');
+	require_once(WB_PATH .'/modules/WBCE_JAIG/languages/'.LANGUAGE .'.php');
 }
 
 // check if backend.css file needs to be included into the <body></body> of modify.php
-if(!method_exists($admin, 'register_backend_modfiles') && file_exists(WB_PATH ."/modules/another_image_gallery_noext/backend.css")) {
+if(!method_exists($admin, 'register_backend_modfiles') && file_exists(WB_PATH ."/modules/WBCE_JAIG/backend.css")) {
 	echo '<style type="text/css">';
-	include(WB_PATH .'/modules/another_image_gallery_noext/backend.css');
+	include(WB_PATH .'/modules/WBCE_JAIG/backend.css');
 	echo "\n</style>\n";
 }
 
@@ -45,34 +45,34 @@ if (!isset($settings['thumbnails_clickable'])) {
 }
 
 ?>
-<h2><?php echo $MOD_AIG_NOEXT['MAIN_SETTINGS']; ?></h2>
+<h2><?php echo $MOD_WBCE_JAIG['MAIN_SETTINGS']; ?></h2>
 <div class="gallery_box">
 <?php
 // include the button to edit the optional module CSS files
 // Note: CSS styles for the button are defined in backend.css (div class="mod_moduledirectory_edit_css")
 // Place this call outside of any <form></form> construct!!!
 if(function_exists('edit_module_css')) {
-	edit_module_css('another_image_gallery_noext');
+	edit_module_css('WBCE_JAIG');
 }
 ?>
-<form name="modify" action="<?php echo WB_URL; ?>/modules/another_image_gallery_noext/save.php" method="post" >
+<form name="modify" action="<?php echo WB_URL; ?>/modules/WBCE_JAIG/save.php" method="post" >
 <input type="hidden" name="section_id" value="<?php echo $section_id; ?>" />
 <input type="hidden" name="page_id" value="<?php echo $page_id; ?>" />
 
 <fieldset class="gallery">
-	<legend><?php echo $MOD_AIG_NOEXT['TITLE']; ?></legend>
+	<legend><?php echo $MOD_WBCE_JAIG['TITLE']; ?></legend>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['TITLE_TEXT']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['TITLE_TEXT']; ?>:<br /></div>
 	<div class="gallery_setting_value"><input type="text" name="titletext" value="<?php echo $settings['titletext']; ?>" /><br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_TITLE']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['SHOW_TITLE']; ?>:<br /></div>
 	<div class="gallery_setting_value"><?php if ($settings['title'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="title" <?php echo $checked; ?> /><br /></div>
 </fieldset>
 
 <fieldset class="gallery">
-	<legend><?php echo $MOD_AIG_NOEXT['ORIGINAL_PICS']; ?></legend>
+	<legend><?php echo $MOD_WBCE_JAIG['ORIGINAL_PICS']; ?></legend>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['PICDIR']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['PICDIR']; ?>:<br /></div>
 	<div class="gallery_setting_value">
 		<select name="picdir">
 		<option value="<?php echo $settings['picdir']; ?>" selected><?php echo $settings['picdir']; ?></option>
@@ -92,46 +92,46 @@ if(function_exists('edit_module_css')) {
 		</select><br />
 	</div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['INCLUDE_SUBDIRS']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['INCLUDE_SUBDIRS']; ?>:<br /></div>
 	<div class="gallery_setting_value"><?php if ($settings['subdirs'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="subdirs" <?php echo $checked; ?> /><br /></div>
 </fieldset>
 <fieldset class="gallery">
-	<legend><?php echo $MOD_AIG_NOEXT['THUMBS']; ?></legend>
+	<legend><?php echo $MOD_WBCE_JAIG['THUMBS']; ?></legend>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['THUMBDIR']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['THUMBDIR']; ?>:<br /></div>
 	<div class="gallery_setting_value"><input type="text" name="thumbdir" value="<?php echo $settings['thumbdir']; ?>" /><br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['THUMBS_BACKGROUND']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['THUMBS_BACKGROUND']; ?>:<br /></div>
 	<div class="gallery_setting_value"><input type="text" name="bg" value="<?php echo $settings['bg']; ?>" /><br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['MAXPICS']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['MAXPICS']; ?>:<br /></div>
 	<div class="gallery_setting_value"><input type="text" name="maxpics" value="<?php echo $settings['maxpics']; ?>" /><br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['THUMBSIZE']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['THUMBSIZE']; ?>:<br /></div>
 	<div class="gallery_setting_value"><input type="text" name="thumbsize" value="<?php echo $settings['thumbsize']; ?>" /> px<br /></div>
 </fieldset>
 <fieldset class="gallery">
-	<legend><?php echo $MOD_AIG_NOEXT['GALLERY']; ?></legend>
+	<legend><?php echo $MOD_WBCE_JAIG['GALLERY']; ?></legend>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['MAXWIDTH']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['MAXWIDTH']; ?>:<br /></div>
 	<div class="gallery_setting_value"><input type="text" name="maxwidth" value="<?php echo $settings['maxwidth']; ?>" /> px<br /></div>
 
-	<div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['INLINE']; ?>:<br /></div>
+	<div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['INLINE']; ?>:<br /></div>
 	<div class="gallery_setting_value"><?php if ($settings['inline'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="inline" <?php echo $checked; ?> /><br /></div>
 
-        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_FILE_NAMES']; ?>:<br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['SHOW_FILE_NAMES']; ?>:<br /></div>
         <div class="gallery_setting_value"><?php if ($settings['filenames'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="filenames" <?php echo $checked; ?> /><br /></div>
 
-        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS']; ?>:<br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['SHOW_FILE_EXTENSIONS']; ?>:<br /></div>
         <div class="gallery_setting_value"><?php if ($settings['show_extensions'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="show_extensions" <?php echo $checked; ?> /><br /></div>
 
-        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_ORIGINAL']; ?>:<br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['SHOW_ORIGINAL']; ?>:<br /></div>
 	<div class="gallery_setting_value"><?php if ($settings['showoriginal'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="showoriginal" <?php echo $checked; ?> /><br /></div>
 
-        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['SHOW_TEXTLINK']; ?>:<br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['SHOW_TEXTLINK']; ?>:<br /></div>
         <div class="gallery_setting_value"><?php if ($settings['textlink'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="textlink" <?php echo $checked; ?> /><br /></div>
 
-        <div class="gallery_setting_name"><?php echo $MOD_AIG_NOEXT['THUMBNAILS_CLICKABLE']; ?>:<br /></div>
+        <div class="gallery_setting_name"><?php echo $MOD_WBCE_JAIG['THUMBNAILS_CLICKABLE']; ?>:<br /></div>
         <div class="gallery_setting_value"><?php if ($settings['thumbnails_clickable'] == '1') {$checked = 'checked';} else {$checked = '';}?><input type="checkbox" value="1" name="thumbnails_clickable" <?php echo $checked; ?> /><br /></div>
 </fieldset>
 

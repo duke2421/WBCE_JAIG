@@ -6,7 +6,7 @@
  * Visit https://wbce.org to learn more and to join the community.
  * @category        modules
  * @package         WBCE_JAIG
- * @author          Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner, Bernd, tomno399
+ * @author          Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner, Bernd, tomno399, Daniel Badberg
  * @copyright       2004-2009, Ryan Djurovich
  * @copyright       2009-2010, Website Baker Org. e.V.
  * @copyright       WBCE Project (2015-)
@@ -60,9 +60,9 @@
 $module_directory = 'WBCE_JAIG';
 $module_name = 'WBCE_JAIG';
 $module_function = 'page';
-$module_version = '2.4.4';
+$module_version = '2.4.6';
 $module_platform = '2.8.x';
-$module_author = 'Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner, tomno399';
+$module_author = 'Daniel Wacker, Matthias Gallas, Rob Smith, Manfred Fuenkner, tomno399, Daniel Badberg';
 $module_license = 'GNU General Public License';
 $module_description = 'This module allows you to create a image Gallery using galerie.php - a simple gallery script from Daniel Wacker <daniel.wacker@web.de>.';
 
@@ -70,4 +70,6 @@ $module_description = 'This module allows you to create a image Gallery using ga
 // 2.4.2 fixes for MySQL-Strict (Bernd)
 // 2.4.3 fix upgrade.php to work with MySQL-Strict/Doctrine
 // 2.4.4 add missing quotation marks around class an rel in view.php (Florian)
+// 2.4.5 update module metadata for new contributor (awaiting confirmed name)
+// 2.4.6 add confirmed contributor Daniel Badberg to module metadata
 ?>

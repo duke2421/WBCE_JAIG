@@ -37,6 +37,7 @@ $MOD_AIG_NOEXT['THUMBS_BACKGROUND'] = 'Bakgrund p&aring; tumnagelbilder';
 $MOD_AIG_NOEXT['THUMBSIZE'] = 'Storlek p&aring; tumnagel';
 $MOD_AIG_NOEXT['MAXWIDTH']	= 'Maximal bildbredd';
 $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Visa filnamn';
+$MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Visa filändelser';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Visa orginal';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Text n&auml;sta/f&ouml;reg&aring;ende l&auml;nkar';
 $MOD_AIG_NOEXT['INLINE'] = 'Show gallery inline';

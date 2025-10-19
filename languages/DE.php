@@ -36,6 +36,7 @@ $MOD_AIG_NOEXT['THUMBS_BACKGROUND'] = 'Hintergrund f&uuml;r Vorschaubilder';
 $MOD_AIG_NOEXT['THUMBSIZE'] = 'Gr&ouml;&szlig;e der Vorschaubilder';
 $MOD_AIG_NOEXT['MAXWIDTH'] = 'Maximale Breite der Bilder';
 $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Dateinamen anzeigen';
+$MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Dateiendungen anzeigen';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Originalbild auf neuer Seite zeigen';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Text anstelle von Icons f&uuml;r vor/zur&uuml;ck';
 $MOD_AIG_NOEXT['INLINE'] = 'Bilder im Inhaltsbereich anzeigen';

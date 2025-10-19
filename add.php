@@ -18,6 +18,7 @@ $maxpics = '9';
 $thumbdir = 'thumbs';
 $thumbsize = '150';
 $filenames = '0';
+$show_extensions = '0';
 $subdirs = '0';
 $title = '0';
 $bg = 'FFFFFF';
@@ -27,6 +28,6 @@ $textlink = '0';
 $titletext = 'Gallery';
 $inline = '1';
 
-$database->query("INSERT INTO `".TABLE_PREFIX."mod_imagegallery_settings` (`page_id`, `section_id`, `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `subdirs`, `title`, `bg`, `maxwidth`, `showoriginal`, `textlink`, `titletext`, `inline`, `picdir`) VALUES ('$page_id','$section_id','$maxpics','$thumbdir','$thumbsize','$filenames','$subdirs','$title','$bg','$maxwidth','$showoriginal','$textlink','$titletext','$inline','')");
+$database->query("INSERT INTO `".TABLE_PREFIX."mod_imagegallery_settings` (`page_id`, `section_id`, `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `show_extensions`, `subdirs`, `title`, `bg`, `maxwidth`, `showoriginal`, `textlink`, `titletext`, `inline`, `picdir`) VALUES ('$page_id','$section_id','$maxpics','$thumbdir','$thumbsize','$filenames','$show_extensions','$subdirs','$title','$bg','$maxwidth','$showoriginal','$textlink','$titletext','$inline','')");
 
 ?>

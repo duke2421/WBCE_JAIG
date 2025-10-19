@@ -35,7 +35,7 @@ if((!function_exists('register_frontend_modfiles') || !defined('MOD_FRONTEND_CSS
 } 
 
 // Get settings
-$query_settings = $database->query("SELECT `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `subdirs`, `title`, `picdir`, `bg`, `maxwidth`, `showoriginal`, `textlink`, `titletext`, `inline` FROM `".TABLE_PREFIX."mod_imagegallery_settings` WHERE `section_id` = '$section_id'");
+$query_settings = $database->query("SELECT `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `show_extensions`, `subdirs`, `title`, `picdir`, `bg`, `maxwidth`, `showoriginal`, `textlink`, `titletext`, `inline` FROM `".TABLE_PREFIX."mod_imagegallery_settings` WHERE `section_id` = '$section_id'");
 $settings = $query_settings->fetchRow();
 
 $charset = DEFAULT_CHARSET;
@@ -43,6 +43,7 @@ $maxpics = $settings['maxpics'];
 $thumbdir = $settings['thumbdir'];
 $thumbsize = $settings['thumbsize'];
 $filenames = $settings['filenames'];
+$show_extensions = $settings['show_extensions'];
 $subdirs = $settings['subdirs'];
 $title = $settings['title'];
 $picdir = $settings['picdir'];
@@ -400,10 +401,11 @@ if ($included && $inline && array_key_exists('pic'.$section_id, $_GET)) {
 			} else {
 				echo '<a href="'.html($dirnamehttp.'/'.$filename).'">';
 			}
-			echo '<img src="' . html($dirnamehttp.'/'.$thumbdir.'/'.$filename.'.thumb.jpg').'" alt="'.html($filename).'" width="'.$thumbsize.'" height="'.$thumbsize.'" />';
-			if ($filenames) {
-				echo '<br /><span class="filename">'.html(pathinfo($filename, PATHINFO_FILENAME)).'</span>';
-			}
+                        echo '<img src="' . html($dirnamehttp.'/'.$thumbdir.'/'.$filename.'.thumb.jpg').'" alt="'.html($filename).'" width="'.$thumbsize.'" height="'.$thumbsize.'" />';
+                        if ($filenames) {
+                                $display_filename = $show_extensions ? $filename : pathinfo($filename, PATHINFO_FILENAME);
+                                echo '<br /><span class="filename">'.html($display_filename).'</span>';
+                        }
 			echo '</a></span>'."\n";
 		}
 		echo '<span class="clear">&nbsp;</span>'."\n";

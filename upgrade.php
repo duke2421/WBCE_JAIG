@@ -21,5 +21,8 @@ if (!$database->field_exists($table, 'titletext')) {
 	$database->query("ALTER TABLE `".$table."` ADD `titletext` TEXT NULL");
 }
 if (!$database->field_exists($table, 'inline')) {
-	$database->query("ALTER TABLE `".$table."` ADD `inline` INT NOT NULL DEFAULT '1'");
+        $database->query("ALTER TABLE `".$table."` ADD `inline` INT NOT NULL DEFAULT '1'");
+}
+if (!$database->field_exists($table, 'show_extensions')) {
+        $database->query("ALTER TABLE `".$table."` ADD `show_extensions` INT NOT NULL DEFAULT '0'");
 }

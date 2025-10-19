@@ -39,6 +39,7 @@ $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Show Filenames';
 $MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Show file extensions';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Show Original';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Text next/previous links';
+$MOD_AIG_NOEXT['THUMBNAILS_CLICKABLE'] = 'Thumbnails clickable';
 $MOD_AIG_NOEXT['INLINE'] = 'Show gallery inline';
 
 //Variables for Error messages

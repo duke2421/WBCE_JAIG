@@ -30,7 +30,7 @@ if(!file_exists(WB_PATH .'/modules/another_image_gallery_noext/languages/'.LANGU
 
 
 // Get settings
-$query_settings = $database->query("SELECT `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `show_extensions`, `subdirs`, `title`, `picdir`, `bg`, `maxwidth`, `showoriginal`, `textlink`, `titletext`, `inline` FROM `".TABLE_PREFIX."mod_imagegallery_settings` WHERE `section_id` = '$section_id'");
+$query_settings = $database->query("SELECT `maxpics`, `thumbdir`, `thumbsize`, `filenames`, `show_extensions`, `subdirs`, `title`, `picdir`, `bg`, `maxwidth`, `showoriginal`, `textlink`, `titletext`, `inline`, `thumbnails_clickable` FROM `".TABLE_PREFIX."mod_imagegallery_settings` WHERE `section_id` = '$section_id'");
 $settings = $query_settings->fetchRow();
 
 $charset = DEFAULT_CHARSET;
@@ -49,6 +49,7 @@ $included = true;
 $titletext = $settings['titletext'];
 $inline = $settings['inline'];
 $bg = $settings['bg'];
+$thumbnails_clickable = isset($settings['thumbnails_clickable']) ? (int)$settings['thumbnails_clickable'] : 1;
 
 global $words;
 $words = $MOD_AIG_NOEXT['words'];
@@ -432,26 +433,35 @@ if ($included && $inline && array_key_exists('pic'.$section_id, $_GET)) {
 				imagejpeg($small, $thumb);
 			}
 			$showThumb = $i >= $offset && $i < ($offset + $maxpics);
-			if  ($showThumb)
-				echo '<span class="picturelink">';
-			else
-			  	echo '<span class="picturelink" style="display:none">';
-			if ($included && $inline) {
-				echo '<a href="?';
-				if (array_key_exists('dir'.$section_id, $_GET)) {
-					echo 'dir'.$section_id.'='.urlencode($_GET['dir'.$section_id]).'&amp;';
-				}
-				echo 'pic'.$section_id.'='.$i.html($urlsuffix).'">';
-			} else {
-				echo '<a class="colorbox" rel="group" href="'.html($dirnamehttp.'/'.$filename).'">';
-			}
-			if ($showThumb)
-				echo '<img src="' . html($dirnamehttp.'/'.$thumbdir.'/'.$filename.'.thumb.jpg').'" alt="'.html($filename).'" width="'.$thumbsize.'" height="'.$thumbsize.'" />';
+                        if  ($showThumb)
+                                echo '<span class="picturelink">';
+                        else
+                                echo '<span class="picturelink" style="display:none">';
+                        if ($thumbnails_clickable) {
+                                if ($included && $inline) {
+                                        echo '<a href="?';
+                                        if (array_key_exists('dir'.$section_id, $_GET)) {
+                                                echo 'dir'.$section_id.'='.urlencode($_GET['dir'.$section_id]).'&amp;';
+                                        }
+                                        echo 'pic'.$section_id.'='.$i.html($urlsuffix).'">';
+                                } else {
+                                        echo '<a class="colorbox" rel="group" href="'.html($dirnamehttp.'/'.$filename).'">';
+                                }
+                        } else {
+                                echo '<span>';
+                        }
+                        if ($showThumb)
+                                echo '<img src="' . html($dirnamehttp.'/'.$thumbdir.'/'.$filename.'.thumb.jpg').'" alt="'.html($filename).'" width="'.$thumbsize.'" height="'.$thumbsize.'" />';
                         if ($filenames) {
                                 $display_filename = $show_extensions ? $filename : pathinfo($filename, PATHINFO_FILENAME);
                                 echo '<br /><span class="filename">'.html($display_filename).'</span>';
                         }
-			echo '</a></span>'."\n";
+                        if ($thumbnails_clickable) {
+                                echo '</a>';
+                        } else {
+                                echo '</span>';
+                        }
+                        echo '</span>'."\n";
 		}
 		echo '<span class="clear">&nbsp;</span>'."\n";
 		echo '</div>'."\n";

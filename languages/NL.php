@@ -40,6 +40,7 @@ $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Bestandsnaam zichtbaar';
 $MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Bestandsextensies zichtbaar';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Originele foto zichtbaar (nieuw scherm)';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Volgende/vorige als tekst ipv plaatje';
+$MOD_AIG_NOEXT['THUMBNAILS_CLICKABLE'] = 'Miniaturen aanklikbaar';
 $MOD_AIG_NOEXT['INLINE'] = 'Show gallery inline';
 
 //Variables for Error messages

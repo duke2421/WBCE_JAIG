@@ -32,9 +32,10 @@ $mod_aig_noext = 'CREATE TABLE `'.TABLE_PREFIX.'mod_imagegallery_settings` ('
 		. ' `bg` TEXT NOT NULL ,'
 		. ' `maxwidth` INT NOT NULL DEFAULT \'0\','
 		. ' `showoriginal` INT NOT NULL DEFAULT \'0\','
-		. ' `textlink` INT NOT NULL DEFAULT \'0\','
-		. ' `titletext` TEXT NOT NULL ,'
-		. ' `inline` INT NOT NULL DEFAULT \'1\','
+                . ' `textlink` INT NOT NULL DEFAULT \'0\','
+                . ' `titletext` TEXT NOT NULL ,'
+                . ' `inline` INT NOT NULL DEFAULT \'1\','
+                . ' `thumbnails_clickable` INT NOT NULL DEFAULT \'1\','
 		. 'PRIMARY KEY (`section_id`)'
 		. ')';
 $database->query($mod_aig_noext);

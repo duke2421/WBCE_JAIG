@@ -39,6 +39,7 @@ $MOD_AIG_NOEXT['SHOW_FILE_NAMES'] = 'Dateinamen anzeigen';
 $MOD_AIG_NOEXT['SHOW_FILE_EXTENSIONS'] = 'Dateiendungen anzeigen';
 $MOD_AIG_NOEXT['SHOW_ORIGINAL'] = 'Originalbild auf neuer Seite zeigen';
 $MOD_AIG_NOEXT['SHOW_TEXTLINK'] = 'Text anstelle von Icons f&uuml;r vor/zur&uuml;ck';
+$MOD_AIG_NOEXT['THUMBNAILS_CLICKABLE'] = 'Vorschaubilder anklickbar';
 $MOD_AIG_NOEXT['INLINE'] = 'Bilder im Inhaltsbereich anzeigen';
 
 //Variablen fuer Fehlermeldungen

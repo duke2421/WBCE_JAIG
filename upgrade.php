@@ -26,3 +26,6 @@ if (!$database->field_exists($table, 'inline')) {
 if (!$database->field_exists($table, 'show_extensions')) {
         $database->query("ALTER TABLE `".$table."` ADD `show_extensions` INT NOT NULL DEFAULT '0'");
 }
+if (!$database->field_exists($table, 'thumbnails_clickable')) {
+        $database->query("ALTER TABLE `".$table."` ADD `thumbnails_clickable` INT NOT NULL DEFAULT '1'");
+}

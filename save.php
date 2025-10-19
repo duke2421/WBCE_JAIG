@@ -91,6 +91,12 @@ if (isset($_POST['inline'])) {
     $inline = '0';
 }
 
+if (isset($_POST['thumbnails_clickable'])) {
+    $thumbnails_clickable = $_POST['thumbnails_clickable'];
+} else {
+    $thumbnails_clickable = '0';
+}
+
 //Write to database	
 $query = "UPDATE `".TABLE_PREFIX."mod_imagegallery_settings` "
 		. "	SET `maxpics` = '$maxpics',"
@@ -106,7 +112,8 @@ $query = "UPDATE `".TABLE_PREFIX."mod_imagegallery_settings` "
 		. "	`showoriginal` = '$showoriginal',"			
 		. "	`textlink` = '$textlink',"
 		. "	`titletext` = '$titletext',"
-		. "	`inline` = '$inline'";
+		. "	`inline` = '$inline',"
+		. "	`thumbnails_clickable` = '$thumbnails_clickable'";
 $query .=  " WHERE `section_id` = '$section_id'";
 
 $database->query($query);

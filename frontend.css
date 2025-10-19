@@ -1,0 +1,41 @@
+hr {
+	border-style: none;
+ 	height: 1px;
+}
+.another_image_gallery_noext {
+	float: left;
+	width: 100%;
+}
+.pagenumbers {
+	text-align: center;
+	margin: 0px 1em 0px 1em;
+}
+.pagenumbers a:link, .pagenumbers a:visited, .pagenumbers a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+.pictures {
+	text-align: center;
+}
+.pictures img {
+	border: none;
+}
+.pictures a:link, .pictures a:visited, .pictures a:hover {
+	color: #000000;
+	text-decoration: none;
+}
+.picturelink {
+	margin: 1em;        
+	float: left;
+}
+.picturelink img {
+	border: none;
+}
+.clear {
+	clear:left;
+}
+.filename {
+	text-align: center;
+}
+.directories {
+}
